@@ -22,7 +22,11 @@ public class Player : MonoBehaviour
     private void HandleCallButton()
     {
         bool input = Input.GetButton("P1 Call");
-
+        if (!input) { return; }
+        Vector3 pos1 = this.transform.position;
+        Vector3 pos2 = MainCharacter.shared.transform.position;
+        float direction = MainCharacter.GetDirection(pos1, pos2);
+        MainCharacter.shared.direction = direction;
     }
 
     private float constraintAngle(float angle)

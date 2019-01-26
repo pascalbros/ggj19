@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
 {
-    static MainCharacter shared = null;
+    public static MainCharacter shared = null;
 
     public float maxSpeed = 3.0f;
 
