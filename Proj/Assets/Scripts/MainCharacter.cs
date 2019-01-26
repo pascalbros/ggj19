@@ -20,6 +20,7 @@ public class MainCharacter : MonoBehaviour
     {
         this.UpdateRotation();
         this.UpdateMovement();
+        //direction = this.GetDirection(GameObject.Find("Player").transform.position, transform.position);
     }
 
     void UpdateMovement()
@@ -50,5 +51,12 @@ public class MainCharacter : MonoBehaviour
             angle = 270.0f;
         }
         transform.eulerAngles = new Vector3(0, 0, angle);
+    }
+
+    public static float GetDirection(Vector3 direction, Vector3 position)
+    {
+        Vector3 p = position;
+        float angle = Mathf.Atan2(p.y - direction.y, p.x - direction.x) * 180 / Mathf.PI;
+        return angle + 180;
     }
 }
