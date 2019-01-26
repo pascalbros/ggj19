@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     GameObject exclamationMark;
     public int playerNumber = 1;
     public float speed = 5.0f;
+
+    private bool canCall = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +68,8 @@ public class Player : MonoBehaviour
     {
         bool input = Input.GetButtonDown("P"+playerNumber+" Call");
         if (!input) { return; }
-        StartCoroutine(ShowWarning(0.8f));
+        if (!canCall) { return; }
+        StartCoroutine(ShowWarning(3.0f));
         Vector3 pos1 = this.transform.position;
         Vector3 pos2 = MainCharacter.shared.transform.position;
         float direction = MainCharacter.GetDirection(pos1, pos2);
@@ -85,8 +88,10 @@ public class Player : MonoBehaviour
 
     IEnumerator ShowWarning(float seconds)
     {
+        this.canCall = false;
         this.exclamationMark.SetActive(true);
         yield return new WaitForSeconds(seconds);
         exclamationMark.SetActive(false);
+        this.canCall = true;
     }
 }
