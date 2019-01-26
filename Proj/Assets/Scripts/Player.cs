@@ -16,12 +16,15 @@ public class Player : MonoBehaviour
     new Color(1.0f, 1.0f, 0.0f, 1.0f)
     };
 
+    GameObject exclamationMark;
     public int playerNumber = 1;
     public float speed = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
         this.SetupPlayerNumber(this.playerNumber);
+        this.exclamationMark = transform.Find("warning").gameObject;
+        this.exclamationMark.SetActive(false);
     }
 
     void SetupPlayerNumber(int number)
@@ -47,8 +50,8 @@ public class Player : MonoBehaviour
 
     private void SetupColor()
     {
-        Color c = Player.colors[this.playerNumber - 1];
-        gameObject.GetComponent<SpriteRenderer>().color = c;
+        //Color c = Player.colors[this.playerNumber - 1];
+        //gameObject.GetComponent<SpriteRenderer>().color = c;
     }
 
     // Update is called once per frame
@@ -63,6 +66,7 @@ public class Player : MonoBehaviour
     {
         bool input = Input.GetButtonDown("P"+playerNumber+" Call");
         if (!input) { return; }
+        StartCoroutine(ShowWarning(0.8f));
         Vector3 pos1 = this.transform.position;
         Vector3 pos2 = MainCharacter.shared.transform.position;
         float direction = MainCharacter.GetDirection(pos1, pos2);
@@ -77,5 +81,12 @@ public class Player : MonoBehaviour
             result = 360 - Mathf.Abs(result);
         }
         return result;
+    }
+
+    IEnumerator ShowWarning(float seconds)
+    {
+        this.exclamationMark.SetActive(true);
+        yield return new WaitForSeconds(seconds);
+        exclamationMark.SetActive(false);
     }
 }
