@@ -66,7 +66,6 @@ public class MainCharacter : MonoBehaviour
         if (other.tag == "Portal")
         {
             CameraDirection dir = other.GetComponent<CameraPortal>().cameraDirection;
-            Debug.Log(direction);
             Camera.main.GetComponent<CameraHandler>().ChangeDirection(dir, other.transform.position);
         }
     }

@@ -16,14 +16,20 @@ public class Player : MonoBehaviour
     new Color(1.0f, 1.0f, 0.0f, 1.0f)
     };
 
+    public AudioClip[] heySounds;
+
     GameObject exclamationMark;
     public int playerNumber = 1;
     public float speed = 5.0f;
+
+    AudioSource audioSource;
 
     private bool canCall = true;
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource source = GetComponent<AudioSource>();
+        this.audioSource = source;
         this.SetupPlayerNumber(this.playerNumber);
         this.exclamationMark = transform.Find("warning").gameObject;
         this.exclamationMark.SetActive(false);
@@ -88,6 +94,8 @@ public class Player : MonoBehaviour
 
     IEnumerator ShowWarning(float seconds)
     {
+        var clip = this.heySounds[Random.Range(0, heySounds.Length)];
+        this.audioSource.PlayOneShot(clip);
         this.canCall = false;
         this.exclamationMark.SetActive(true);
         yield return new WaitForSeconds(seconds);
