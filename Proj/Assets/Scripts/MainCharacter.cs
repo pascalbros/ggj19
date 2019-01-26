@@ -27,7 +27,6 @@ public class MainCharacter : MonoBehaviour
         Vector3 p = transform.position;
         Vector2 point = Utils.pointOnCircle(new Vector2(p.x, p.y), 1.0f, this.direction);
         var step = this.maxSpeed * Time.deltaTime;
-        Debug.Log(point + " " + transform.position);
         transform.position = Vector3.MoveTowards(transform.position, point, step);
     }
 

@@ -16,5 +16,22 @@ public class Player : MonoBehaviour
     {
         var move = new Vector3(Input.GetAxis("P1 Horizontal"), Input.GetAxis("P1 Vertical"), 0);
         this.transform.position += move * speed * Time.deltaTime;
+        HandleCallButton();
+    }
+
+    private void HandleCallButton()
+    {
+        bool input = Input.GetButton("P1 Call");
+
+    }
+
+    private float constraintAngle(float angle)
+    {
+        float result = angle - 90;
+        if (result < 0)
+        {
+            result = 360 - Mathf.Abs(result);
+        }
+        return result;
     }
 }
