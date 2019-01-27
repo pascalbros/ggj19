@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fungo : MonoBehaviour
+public class fungoCollider : MonoBehaviour
 {
     void Start()
     {
@@ -15,7 +15,7 @@ public class fungo : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if(coll.gameObject.name == "MainCharacter")
+        if (coll.gameObject.name == "MainCharacter")
         {
             Vector3 pos1 = this.transform.position;
             Vector3 pos2 = MainCharacter.shared.transform.position;
