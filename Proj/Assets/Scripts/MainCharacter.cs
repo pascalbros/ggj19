@@ -90,6 +90,10 @@ public class MainCharacter : MonoBehaviour
             Debug.Log("Malus!");
             GameObject.Find("deathHandler").GetComponent<deathHandler>().deathScreen();
         }
+        else if (other.tag == "Win")
+        {
+            MainCharacter.shared.isGameActive = false;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
