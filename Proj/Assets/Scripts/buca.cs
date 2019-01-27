@@ -21,6 +21,8 @@ public class buca : MonoBehaviour
         if (coll.gameObject.tag == "Player")
         {
             Destroy(coll.gameObject);
+            var source = GetComponent<AudioSource>();
+            source.PlayOneShot(source.clip);
         }
         else if(coll.gameObject.name == "MainCharacter")
         {
