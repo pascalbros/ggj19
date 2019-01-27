@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
     AudioSource audioSource;
 
     private bool canCall = true;
+
+    public int bacca = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,12 +66,22 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
+    float timeLeft = 5;
     void Update()
     {
-        if (!MainCharacter.shared.isGameActive) { return; }
-        var move = new Vector3(Input.GetAxis("P"+playerNumber+" Horizontal"), Input.GetAxis("P" + playerNumber + " Vertical"), 0);
+        var move = new Vector3(Input.GetAxis("P"+playerNumber+" Horizontal") * bacca, Input.GetAxis("P" + playerNumber + " Vertical") * bacca, 0);
         this.transform.position += move * speed * Time.deltaTime;
         HandleCallButton();
+        if(bacca < 0)
+        {
+            timeLeft -= Time.deltaTime;
+            Debug.Log(Time.deltaTime + " " + timeLeft);
+            if(timeLeft <= 0)
+            {
+                bacca = 1;
+                timeLeft = 30;
+            }
+        }
     }
 
     private void HandleCallButton()
@@ -102,5 +115,10 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         exclamationMark.SetActive(false);
         this.canCall = true;
+    }
+
+    public static bool checkPlayers()
+    {
+        return Player.one != null || Player.two != null || Player.three != null || Player.four != null;
     }
 }
