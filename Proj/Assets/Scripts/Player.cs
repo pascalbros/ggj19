@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    static Player one = null;
-    static Player two = null;
-    static Player three = null;
-    static Player four = null;
+    public static Player one = null;
+    public static Player two = null;
+    public static Player three = null;
+    public static Player four = null;
 
     static Color[] colors = {
     new Color(1.0f, 0.0f, 0.0f, 1.0f),
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
         this.canCall = true;
     }
 
-    public static bool checkPlayers()
+    public static bool playersStillAlive()
     {
         return Player.one != null || Player.two != null || Player.three != null || Player.four != null;
     }

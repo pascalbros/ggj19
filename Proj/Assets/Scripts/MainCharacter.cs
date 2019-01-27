@@ -91,4 +91,13 @@ public class MainCharacter : MonoBehaviour
             GameObject.Find("deathHandler").GetComponent<deathHandler>().deathScreen();
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.otherCollider.tag == "Malus" || collision.collider.tag == "Malus")
+        {
+            Debug.Log("Malus!");
+            GameObject.Find("deathHandler").GetComponent<deathHandler>().deathScreen();
+        }
+    }
 }
