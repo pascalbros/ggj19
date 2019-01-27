@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainCharacter : MonoBehaviour
 {
     public static MainCharacter shared = null;
-
+    public bool isGameActive = false;
     public float maxSpeed = 3.0f;
 
     [Range(0, 359)]
@@ -18,6 +18,7 @@ public class MainCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!this.isGameActive) { return; }
         this.UpdateRotation();
         this.UpdateMovement();
         //direction = this.GetDirection(GameObject.Find("Player").transform.position, transform.position);

@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!MainCharacter.shared.isGameActive) { return; }
         var move = new Vector3(Input.GetAxis("P"+playerNumber+" Horizontal"), Input.GetAxis("P" + playerNumber + " Vertical"), 0);
         this.transform.position += move * speed * Time.deltaTime;
         HandleCallButton();
