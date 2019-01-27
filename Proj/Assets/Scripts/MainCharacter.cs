@@ -7,12 +7,14 @@ public class MainCharacter : MonoBehaviour
     public static MainCharacter shared = null;
     public bool isGameActive = false;
     public float maxSpeed = 3.0f;
-
+    Animator animator;
     [Range(0, 359)]
     public float direction = 0.0f;
+    private int directionEnum = 0;
     void Start()
     {
         MainCharacter.shared = this;
+        this.animator = this.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,24 +36,39 @@ public class MainCharacter : MonoBehaviour
 
     void UpdateRotation()
     {
-        float angle = 0.0f;
+        int current = this.directionEnum;
+        Debug.Log(current);
         if (this.direction >= 360 - 45 || this.direction < 45)
         {
-            angle = 90.0f;
+            if (current != 1) {
+                this.directionEnum = 1;
+                animator.SetInteger("direction", 1);
+            }
         }
         else if (this.direction >= 45 && this.direction < 135)
         {
-            angle = 0.0f;
+            if (current != 2)
+            {
+                this.directionEnum = 2;
+                animator.SetInteger("direction", 2);
+            }
         }
         else if (this.direction >= 135 && this.direction < 225)
         {
-            angle = 270.0f;
+            if (current != 3)
+            {
+                this.directionEnum = 3;
+                animator.SetInteger("direction", 3);
+            }
         }
         else
         {
-            angle = 180.0f;
+            if (current != 4)
+            {
+                this.directionEnum = 4;
+                animator.SetInteger("direction", 4);
+            }
         }
-        transform.eulerAngles = new Vector3(0, 0, angle);
     }
 
     public static float GetDirection(Vector3 direction, Vector3 position)
@@ -68,6 +85,10 @@ public class MainCharacter : MonoBehaviour
         {
             CameraDirection dir = other.GetComponent<CameraPortal>().cameraDirection;
             Camera.main.GetComponent<CameraHandler>().ChangeDirection(dir, other.transform.position);
+        }else if (other.tag == "Malus")
+        {
+            Debug.Log("Malus!");
+            GameObject.Find("deathHandler").GetComponent<deathHandler>().deathScreen();
         }
     }
 }

@@ -69,6 +69,7 @@ public class Player : MonoBehaviour
     float timeLeft = 5;
     void Update()
     {
+        if (!MainCharacter.shared.isGameActive) { return; }
         var move = new Vector3(Input.GetAxis("P"+playerNumber+" Horizontal") * bacca, Input.GetAxis("P" + playerNumber + " Vertical") * bacca, 0);
         this.transform.position += move * speed * Time.deltaTime;
         HandleCallButton();

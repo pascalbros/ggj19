@@ -9,6 +9,9 @@ public class StartHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.counter = 0;
+        Object.Destroy(this.gameObject, 0.1f);
+        return;
         StartCoroutine(ChangeNumber());
     }
 

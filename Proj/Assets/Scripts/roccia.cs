@@ -15,13 +15,4 @@ public class roccia : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerEnter2D(Collider2D coll)
-    {
-        if (coll.gameObject.name == "MainCharacter")
-        {
-            Debug.Log("ciao");
-            GameObject.Find("deathHandler").GetComponent<deathHandler>().deathScreen();
-        }
-    }
 }

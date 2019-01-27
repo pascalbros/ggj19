@@ -11,12 +11,4 @@ public class fungoDeath : MonoBehaviour
     void Update()
     {
     }
-
-    private void OnTriggerEnter2D(Collider2D coll)
-    {
-        if (coll.gameObject.name == "MainCharacter")
-        {
-            Destroy(coll.gameObject);
-        }
-    }
 }

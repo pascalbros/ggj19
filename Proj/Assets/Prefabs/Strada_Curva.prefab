@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3372103318463329507}
   m_Layer: 0
   m_Name: L
-  m_TagString: Untagged
+  m_TagString: Malus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 3372103318513572662}
   m_Layer: 0
   m_Name: R (1)
-  m_TagString: Untagged
+  m_TagString: Malus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +219,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 3372103318766214684}
   m_Layer: 0
   m_Name: R
-  m_TagString: Untagged
+  m_TagString: Malus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,7 +382,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 3372103319172385252}
   - component: {fileID: 3372103319172385275}
   m_Layer: 0
-  m_Name: Strada_Curva_Destra
+  m_Name: Strada_Curva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 3372103319818190388}
   m_Layer: 0
   m_Name: R (3)
-  m_TagString: Untagged
+  m_TagString: Malus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -590,7 +590,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 3372103320113750474}
   m_Layer: 0
   m_Name: R (2)
-  m_TagString: Untagged
+  m_TagString: Malus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -718,7 +718,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
