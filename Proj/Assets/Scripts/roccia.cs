@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class buca : MonoBehaviour
+public class roccia : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,12 +18,9 @@ public class buca : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.name == "MainCharacter")
         {
-            Destroy(coll.gameObject);
-        }
-        else if(coll.gameObject.name == "MainCharacter")
-        {
+            Debug.Log("ciao");
             GameObject.Find("deathHandler").GetComponent<deathHandler>().deathScreen();
         }
     }

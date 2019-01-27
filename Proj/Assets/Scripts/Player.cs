@@ -108,4 +108,9 @@ public class Player : MonoBehaviour
         exclamationMark.SetActive(false);
         this.canCall = true;
     }
+
+    public static bool checkPlayers()
+    {
+        return Player.one != null || Player.two != null || Player.three != null || Player.four != null;
+    }
 }
