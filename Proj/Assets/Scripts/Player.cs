@@ -31,6 +31,10 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (PickPlayers.numberOfPlayers < playerNumber)
+        {
+            DestroyImmediate(this.gameObject);
+        }
         AudioSource source = GetComponent<AudioSource>();
         this.audioSource = source;
         this.SetupPlayerNumber(this.playerNumber);

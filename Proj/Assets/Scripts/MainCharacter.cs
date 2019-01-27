@@ -38,7 +38,6 @@ public class MainCharacter : MonoBehaviour
     void UpdateRotation()
     {
         int current = this.directionEnum;
-        Debug.Log(current);
         if (this.direction >= 360 - 45 || this.direction < 45)
         {
             if (current != 1) {
