@@ -10,6 +10,7 @@ public class StartHandler : MonoBehaviour
     void Start()
     {
         this.counter = 0;
+        MainCharacter.shared.isGameActive = true;
         Object.Destroy(this.gameObject, 0.1f);
         return;
         StartCoroutine(ChangeNumber());
