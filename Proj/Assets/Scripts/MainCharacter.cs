@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour
 {
+    public AudioClip winSound;
     public static MainCharacter shared = null;
     public bool isGameActive = false;
     public float maxSpeed = 3.0f;
@@ -92,7 +93,7 @@ public class MainCharacter : MonoBehaviour
         }
         else if (other.tag == "Win")
         {
-            MainCharacter.shared.isGameActive = false;
+            OnWin();
         }
     }
 
@@ -103,5 +104,20 @@ public class MainCharacter : MonoBehaviour
             Debug.Log("Malus!");
             GameObject.Find("deathHandler").GetComponent<deathHandler>().deathScreen();
         }
+    }
+
+    private void OnWin()
+    {
+        MainCharacter.shared.isGameActive = false;
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(winSound);
+        StartCoroutine(changeScreen());
+
+    }
+
+    IEnumerator changeScreen()
+    {
+        yield return new WaitForSeconds(6);
+        GameObject.Find("deathHandler").GetComponent<deathHandler>().menuScreen();
+
     }
 }

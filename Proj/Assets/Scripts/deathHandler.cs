@@ -21,4 +21,9 @@ public class deathHandler : MonoBehaviour
     {
         SceneManager.LoadScene("DeathScene", LoadSceneMode.Single);
     }
+
+    public void menuScreen()
+    {
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+    }
 }
