@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 4f9feffbe08dc4448be9caf55cff37d9
   - enabled: 1
-    path: Assets/Scenes/Main.unity
+    path: Assets/Scenes/Main2.unity
     guid: 82761d91acc5b43468b7b9f223deef35
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Players.unity
     guid: 54777bc2f8f7546878a76806f3bde4e9
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 504a5219d6f6849839eeb16249c3f58d
   m_configObjects: {}
